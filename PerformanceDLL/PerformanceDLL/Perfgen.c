@@ -421,8 +421,9 @@ Return Value:
         // finally the constant value (same fore every instance)
         pSC->dwConstantValue = (DWORD)CONSTANT_VALUE_VALUE;
 
+    	//// MY CODE HERE ////
         // Custom signal (squared time mod 10)
-    	pSC->dwCustomCounter = (DWORD) ((dwTime % 10ul) * (dwTime % 10ul));
+    	pSC->dwCustomCounter = (DWORD)(fmod((double)dwTime, 10.0) * fmod((double)dwTime, 10.0));
 
         // update instance pointer for next instance
         pPerfInstanceDefinition = (PERF_INSTANCE_DEFINITION *)&pSC[1];

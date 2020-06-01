@@ -30,11 +30,16 @@
 // An error has occurred (%2).
 //
 #define SVC_ERROR                        ((DWORD)0xC0020001L)
+#define _WINSOCKAPI_
 
 // add headers that you want to pre-compile here
 #include <windows.h>
 #include <tchar.h>
 #include <strsafe.h>
 #include <conio.h>
+#include <cstdio>
+#include <cstdlib>
+#include <winsock2.h>
+#include <ws2tcpip.h>
 
 #endif //PCH_H

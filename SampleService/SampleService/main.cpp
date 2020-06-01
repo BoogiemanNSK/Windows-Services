@@ -1,47 +1,23 @@
 #include "pch.h"
-#include "ServiceWrapper.h"
-#include "PipeClient.h"
-#include "PipeServer.h"
-#include "PipeParent.h"
+#include "CClient.h"
+#include "CService.h"
 
-#include <iostream>
-
-int _tmain(int argc, char* argv[]) {
-	printf("Path to app: %s", argv[0]);
-		
-	if (argc < 2) {
-		std::cout << "Specify either --server, --client, --parent or --service key.\n";
-		return -1;
-	}
-
-	if (strncmp(argv[1], "--server", 10) == 0) {
-
-		auto serverObject= new PipeServer();
-		if (serverObject->MyInit()) {
-			serverObject->MyDone();
+int _tmain(int argc, char* argv[])
+{
+	if (argc > 1) 
+	{
+		auto clientObj = new CClient();
+		if (!clientObj->MyInit()) 
+		{
+			printf("Unable to initialize client!\n");
+			return 1;
 		}
 		
-	} else if (strncmp(argv[1], "--client", 10) == 0) {
-		
-		auto clientObject = new PipeClient();
-		clientObject->RunClient();
-		
-	} else if (strncmp(argv[1], "--service", 10) == 0) {
-
-		auto serviceObj = new ServiceWrapper();
-		serviceObj->RunService(argc, argv);
-		
-	} else if (strncmp(argv[1], "--parent", 10) == 0) {
-
-		auto parentObj = new PipeParent();
-		parentObj->RunParent(--argc, ++argv);
-		
-	} else {
-		
-		std::cout << "Specify either --PipeServer, --PipeClient, --PipeParent or --ServiceWrapper key.\n";
-		return -1;
-		
+		clientObj->ConnectToRemoteCmd();
+		return 0;
 	}
 	
+	auto serviceObj = new CService();
+	serviceObj->RunService(argc, argv);
 	return 0;
 }

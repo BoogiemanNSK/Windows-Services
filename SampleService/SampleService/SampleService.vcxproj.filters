@@ -21,19 +21,28 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ThreadWrapper.cpp">
+    <ClCompile Include="CService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PipeClient.cpp">
+    <ClCompile Include="CThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PipeParent.cpp">
+    <ClCompile Include="CPipe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ServiceWrapper.cpp">
+    <ClCompile Include="CLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PipeServer.cpp">
+    <ClCompile Include="CSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTcbHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,19 +50,28 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ThreadWrapper.h">
+    <ClInclude Include="CService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PipeClient.h">
+    <ClInclude Include="CThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PipeParent.h">
+    <ClInclude Include="CPipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ServiceWrapper.h">
+    <ClInclude Include="CLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PipeServer.h">
+    <ClInclude Include="CSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTcbHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

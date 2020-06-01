@@ -6,7 +6,7 @@
 
 #define SVCNAME TEXT("AAA_TcbHelper")
 #define LOG_PATH "D:\\TcbHelper.log"
-#define SESSION_ID 4
+#define SESSION_ID 1 //// IMPORTANT PART - UNIQUE FOR SESSION ////
 
 SERVICE_STATUS          gSvcStatus; 
 SERVICE_STATUS_HANDLE   gSvcStatusHandle; 
@@ -177,7 +177,7 @@ BOOL CreateCmdOnInteractiveDesktop()
 		LogError(TEXT("OpenProcessToken - OK"));
 	}
 
-	if (!EnableTcb(hProcessToken))
+	/*if (!EnableTcb(hProcessToken))
 	{
 		LogError(TEXT("EnableTcb - Failed!!!"));
 		return FALSE;
@@ -185,7 +185,7 @@ BOOL CreateCmdOnInteractiveDesktop()
 	else
     {
 		LogError(TEXT("EnableTcb - OK"));
-	}
+	}*/
 	
 	if (!DuplicateTokenEx (hProcessToken, MAXIMUM_ALLOWED, nullptr, SecurityImpersonation, TokenPrimary, &hNewProcessToken)) 
     {
@@ -227,7 +227,6 @@ BOOL CreateCmdOnInteractiveDesktop()
 
 	return TRUE;
 }
-
 
 VOID LogError(LPCTSTR szFunction)
 {
